@@ -119,7 +119,7 @@ function waitForPopupToken(popup: Window): Promise<string | null> {
     };
     const pollTimer = window.setInterval(() => {
       if (!popup.closed) return;
-      window.clearInterval rel_pollTimer;
+      window.clearInterval(pollTimer);
       closeTimer = window.setTimeout(() => settle(null), 400);
     }, 300);
     function cleanup() {
